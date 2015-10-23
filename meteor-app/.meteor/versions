@@ -67,7 +67,6 @@ iron:location@1.0.11
 iron:middleware-stack@1.0.11
 iron:router@1.0.12
 iron:url@1.0.11
-isotope:isotope@2.1.0_1
 jquery@1.11.4
 launch-screen@1.0.4
 livedata@1.0.15
@@ -81,8 +80,8 @@ mobile-experience@1.0.1
 mobile-status-bar@1.0.6
 mongo@1.1.2
 mongo-id@1.0.1
-mrt:jquery-imagesloaded@0.0.2
 mongo-livedata@1.0.9
+mrt:jquery-imagesloaded@0.0.2
 npm-bcrypt@0.7.8_2
 npm-mongo@1.4.39_1
 oauth@1.1.6
