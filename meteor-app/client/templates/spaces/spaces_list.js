@@ -1,15 +1,18 @@
+Template.spacesList.events({
+  'click .load-more': function(e) {
+
+  }
+});
+
 Template.spacesList.onRendered(function () {
+  /*var $container = $('#spacegrid');
 
-  // Take care of fancy grid formatting
-  var $container = $('#spacegrid');
-
-  $container.imagesLoaded( function(){
+  $container.imagesLoaded(function () {
     $container.masonry({
-      itemSelector : '.space'
+      itemSelector: '.space'
     });
   });
-
-
+  */
   this.find('.wrapper')._uihooks = {
     insertElement: function (node, next) {
       $(node)
