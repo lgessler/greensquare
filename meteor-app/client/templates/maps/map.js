@@ -1,4 +1,6 @@
-Template.body.helpers({
+
+
+/* Template.body.helpers({
         exampleMapOptions: function() {
             // Make sure the maps API has loaded
             if (GoogleMaps.loaded()) {
@@ -20,4 +22,15 @@ Template.body.helpers({
                 map: map.instance
             });
         });
-    });
+    }); */
+
+Template.map.helpers({
+    mapOptions: function() {
+        if (GoogleMaps.loaded()) {
+            return {
+                center: new google.maps.LatLng(-37.8136, 144.9631),
+                zoom: 8
+            };
+        }
+    }
+});
