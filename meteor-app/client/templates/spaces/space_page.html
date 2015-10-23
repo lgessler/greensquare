@@ -1,8 +1,11 @@
 <template name="spacePage">
   <div class="space-page page">
     {{> spaceItem}}
-      {{> spacePhoto}}
-      {{> map}}
+    {{> spacePhoto}}
+    <div class="map-container">
+      {{> googleMap name="map" options=mapOptions}}
+    </div>
+
   
     <ul class="comments">
       {{#each reviews}}
