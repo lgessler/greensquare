@@ -1,5 +1,5 @@
-Template.postItem.helpers({
-  ownPost: function() {
+Template.spaceItem.helpers({
+  ownSpace: function() {
     return this.userId == Meteor.userId();
   },
   domain: function() {
@@ -17,7 +17,7 @@ Template.postItem.helpers({
   }
 });
 
-Template.postItem.events({
+Template.spaceItem.events({
   'click .upvotable': function(e) {
     e.preventDefault();
     Meteor.call('upvote', this._id);

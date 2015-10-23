@@ -1,0 +1,17 @@
+<template name="spacePage">
+  <div class="space-page page">
+    {{> spaceItem}}
+  
+    <ul class="reviews">
+      {{#each reviews}}
+        {{> reviewItem}}
+      {{/each}}
+    </ul>
+  
+    {{#if currentUser}}
+      {{> reviewSubmit}}
+    {{else}}
+      <p>Please log in to leave a review.</p>
+    {{/if}}
+  </div>
+</template>
