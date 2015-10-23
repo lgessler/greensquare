@@ -33,3 +33,4 @@ accounts-facebook
 cfs:standard-packages
 cfs:filesystem
 cfs:gridfs
+juliancwirko:s-grid
