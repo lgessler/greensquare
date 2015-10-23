@@ -1,4 +1,15 @@
 Template.spacesList.onRendered(function () {
+
+  // Take care of fancy grid formatting
+  var $container = $('#spacegrid');
+
+  $container.imagesLoaded( function(){
+    $container.masonry({
+      itemSelector : '.space'
+    });
+  });
+
+
   this.find('.wrapper')._uihooks = {
     insertElement: function (node, next) {
       $(node)

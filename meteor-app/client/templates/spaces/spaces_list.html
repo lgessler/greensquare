@@ -1,18 +1,20 @@
 <template name="spacesList">
-  <div class="spaces page">
-    <div class="wrapper">
-      {{#each spaces}}
-        {{> spaceItem}}
-        {{> spaceListPhoto}}
-      {{/each}}
+  <div class="container-fluid">
+    <div class="">
+      <!-- Set up reactive grid -->
+      <div id="spacegrid" class="wrapper">
+        {{#each spaces}}
+          {{> spaceItem}}
+        {{/each}}
+      </div>
+      
+      {{#if nextPath}}
+        <a class="load-more" href="{{nextPath}}">Load more</a>
+      {{else}}
+        {{#unless ready}}
+          {{> spinner}}
+        {{/unless}}
+      {{/if}}
     </div>
-    
-    {{#if nextPath}}
-      <a class="load-more" href="{{nextPath}}">Load more</a>
-    {{else}}
-      {{#unless ready}}
-        {{> spinner}}
-      {{/unless}}
-    {{/if}}
   </div>
 </template>
