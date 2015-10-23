@@ -14,6 +14,12 @@ Template.spaceItem.helpers({
     } else {
       return 'disabled';
     }
+  },
+  height: function() {
+    return 360;
+  },
+  width: function() {
+    return 480;
   }
 });
 
