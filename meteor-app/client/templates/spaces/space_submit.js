@@ -16,18 +16,17 @@ Template.spaceSubmit.events({
     e.preventDefault();
     
     var space = {
-      url: $(e.target).find('[name=url]').val(),
-      title: $(e.target).find('[name=title]').val()
+      loc: $(e.target).find('[name=loc]').val(),
+      picUrl: $(e.target).find('[name=picUrl]').val(),
+      title: $(e.target).find('[name=title]').val(),
+      address: $(e.target).find('[name=address]').val()
     };
 
     var user = Meteor.user();
     space = _.extend(space, {
       userId: user._id,
-      author: user.username,
-      submitted: new Date(),
-      reviewsCount: 0,
-      upvoters: [],
-      votes: 0
+      submitter: user.username,
+      date: new Date(),
     });
 
     // No validation or security for now

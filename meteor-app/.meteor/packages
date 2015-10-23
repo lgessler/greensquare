@@ -27,6 +27,9 @@ audit-argument-checks
 insecure
 autopublish
 dburles:google-maps
-isotope:isotope
 sjors:meteor-masonry
 mrt:jquery-imagesloaded
+accounts-facebook
+cfs:standard-packages
+cfs:filesystem
+cfs:gridfs
