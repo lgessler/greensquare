@@ -27,3 +27,7 @@ audit-argument-checks
 insecure
 autopublish
 dburles:google-maps
+accounts-facebook
+cfs:standard-packages
+cfs:filesystem
+cfs:gridfs
