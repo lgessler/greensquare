@@ -34,7 +34,6 @@ Template.spaceSubmit.events({
     // No validation or security for now
     var spaceId = Spaces.insert(space);
 
-    console.log(space);
     Router.go('spacePage', {_id: spaceId});
   }
 });
