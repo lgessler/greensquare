@@ -1,9 +1,4 @@
-if (Meteor.isClient) {
-    Meteor.startup(function() {
-        GoogleMaps.load();
-    });
-
-    Template.body.helpers({
+Template.body.helpers({
         exampleMapOptions: function() {
             // Make sure the maps API has loaded
             if (GoogleMaps.loaded()) {
@@ -26,4 +21,3 @@ if (Meteor.isClient) {
             });
         });
     });
-}
