@@ -1,4 +1,4 @@
-.grid-block, .main, .post, .comments li, .comment-form {
+.grid-block, .main, .space, .reviews li, .review-form {
   background: #fff;
   border-radius: 3px;
   padding: 10px;
@@ -29,66 +29,66 @@ body {
 #spinner {
   height: 300px; }
 
-.post {
+.space {
   /* For modern browsers */
   /* For IE 6/7 (trigger hasLayout) */
   *zoom: 1;
   position: relative;
   opacity: 1; }
-  .post:before, .post:after {
+  .space:before, .space:after {
     content: "";
     display: table; }
-  .post:after {
+  .space:after {
     clear: both; }
-  .post.invisible {
+  .space.invisible {
     opacity: 0; }
-  .post.instant {
+  .space.instant {
     -webkit-transition: none;
     -moz-transition: none;
     -o-transition: none;
     transition: none; }
-  .post.animate{
+  .space.animate{
     -webkit-transition: all 300ms 0ms;
     -moz-transition: all 300ms 0ms ease-in;
     -o-transition: all 300ms 0ms ease-in;
     transition: all 300ms 0ms ease-in; }
-  .post .upvote {
+  .space .upvote {
     display: block;
     margin: 7px 12px 0 0;
     float: left; }
-  .post .post-content {
+  .space .space-content {
     float: left; }
-    .post .post-content h3 {
+    .space .space-content h3 {
       margin: 0;
       line-height: 1.4;
       font-size: 18px; }
-      .post .post-content h3 a {
+      .space .space-content h3 a {
         display: inline-block;
         margin-right: 5px; }
-      .post .post-content h3 span {
+      .space .space-content h3 span {
         font-weight: normal;
         font-size: 14px;
         display: inline-block;
         color: #aaaaaa; }
-    .post .post-content p {
+    .space .space-content p {
       margin: 0; }
-  .post .discuss {
+  .space .discuss {
     display: block;
     float: right;
     margin-top: 7px; }
 
-.comments {
+.reviews {
   list-style-type: none;
   margin: 0; }
-  .comments li h4 {
+  .reviews li h4 {
     font-size: 16px;
     margin: 0; }
-    .comments li h4 .date {
+    .reviews li h4 .date {
       font-size: 12px;
       font-weight: normal; }
-    .comments li h4 a {
+    .reviews li h4 a {
       font-size: 12px; }
-  .comments li p:last-child {
+  .reviews li p:last-child {
     margin-bottom: 0; }
 
 .dropdown-menu span {
@@ -111,7 +111,7 @@ body {
     text-decoration: none;
     background: rgba(0, 0, 0, 0.1); }
 
-.posts .spinner-container{
+.spaces .spinner-container{
   position: relative;
   height: 100px;
 }

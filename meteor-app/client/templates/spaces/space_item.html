@@ -1,0 +1,15 @@
+<template name="spaceItem">
+  <div class="space">
+    <a href="#" class="upvote btn btn-default {{upvotedClass}}">⬆</a>
+    <div class="space-content">
+      <h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
+      <p>
+        {{pluralize votes "Vote"}},
+        submitted by {{author}},
+        <a href="{{pathFor 'spacePage'}}">{{pluralize reviewsCount "review"}}</a>
+        {{#if ownSpace}}<a href="{{pathFor 'spaceEdit'}}">Edit</a>{{/if}}
+      </p>
+    </div>
+    <a href="{{pathFor 'spacePage'}}" class="discuss btn btn-default">Discuss</a>
+  </div>
+</template>

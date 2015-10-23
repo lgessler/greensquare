@@ -8,8 +8,8 @@ Template.notifications.helpers({
 });
 
 Template.notificationItem.helpers({
-  notificationPostPath: function() {
-    return Router.routes.postPage.path({_id: this.postId});
+  notificationSpacePath: function() {
+    return Router.routes.spacePage.path({_id: this.spaceId});
   }
 })
 

@@ -1,20 +1,20 @@
-Meteor.publish('posts', function(options) {
+Meteor.publish('spaces', function(options) {
   check(options, {
     sort: Object,
     limit: Number
   });
-  return Posts.find({}, options);
+  return Spaces.find({}, options);
 });
 
-Meteor.publish('singlePost', function(id) {
+Meteor.publish('singleSpace', function(id) {
   check(id, String);
-  return Posts.find(id);
+  return Spaces.find(id);
 });
 
 
-Meteor.publish('comments', function(postId) {
-  check(postId, String);
-  return Comments.find({postId: postId});
+Meteor.publish('reviews', function(spaceId) {
+  check(spaceId, String);
+  return Reviews.find({spaceId: spaceId});
 });
 
 Meteor.publish('notifications', function() {

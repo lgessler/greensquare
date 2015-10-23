@@ -7,78 +7,78 @@ Router.configure({
   }
 });
 
-PostsListController = RouteController.extend({
-  template: 'postsList',
+SpacesListController = RouteController.extend({
+  template: 'spacesList',
   increment: 5, 
-  postsLimit: function() { 
-    return parseInt(this.params.postsLimit) || this.increment; 
+  spacesLimit: function() {
+    return parseInt(this.params.spacesLimit) || this.increment;
   },
   findOptions: function() {
-    return {sort: this.sort, limit: this.postsLimit()};
+    return {sort: this.sort, limit: this.spacesLimit()};
   },
   subscriptions: function() {
-    this.postsSub = Meteor.subscribe('posts', this.findOptions());
+    this.spacesSub = Meteor.subscribe('spaces', this.findOptions());
   },
-  posts: function() {
-    return Posts.find({}, this.findOptions());
+  spaces: function() {
+    return Spaces.find({}, this.findOptions());
   },
   data: function() {
     var self = this;
     return {
-      posts: self.posts(),
-      ready: self.postsSub.ready,
+      spaces: self.spaces(),
+      ready: self.spacesSub.ready,
       nextPath: function() {
-        if (self.posts().count() === self.postsLimit())
+        if (self.spaces().count() === self.spacesLimit())
           return self.nextPath();
       }
     };
   }
 });
 
-NewPostsController = PostsListController.extend({
+NewSpacesController = SpacesListController.extend({
   sort: {submitted: -1, _id: -1},
   nextPath: function() {
-    return Router.routes.newPosts.path({postsLimit: this.postsLimit() + this.increment})
+    return Router.routes.newSpaces.path({spacesLimit: this.spacesLimit() + this.increment})
   }
 });
 
-BestPostsController = PostsListController.extend({
+BestSpacesController = SpacesListController.extend({
   sort: {votes: -1, submitted: -1, _id: -1},
   nextPath: function() {
-    return Router.routes.bestPosts.path({postsLimit: this.postsLimit() + this.increment})
+    return Router.routes.bestSpaces.path({spacesLimit: this.spacesLimit() + this.increment})
   }
 });
 
 Router.route('/', {
   name: 'home',
-  controller: NewPostsController
+  controller: NewSpacesController
 });
 
-Router.route('/new/:postsLimit?', {name: 'newPosts'});
+Router.route('/new/:spacesLimit?', {name: 'newSpaces'});
 
-Router.route('/best/:postsLimit?', {name: 'bestPosts'});
+Router.route('/best/:spacesLimit?', {name: 'bestSpaces'});
 
 
-Router.route('/posts/:_id', {
-  name: 'postPage',
+Router.route('/spaces/:_id', {
+  name: 'spacePage',
   waitOn: function() {
     return [
-      Meteor.subscribe('singlePost', this.params._id),
-      Meteor.subscribe('comments', this.params._id)
+      Meteor.subscribe('singleSpace', this.params._id),
+      Meteor.subscribe('reviews', this.params._id)
     ];
   },
-  data: function() { return Posts.findOne(this.params._id); }
+  data: function() { return Spaces.findOne(this.params._id); }
 });
 
-Router.route('/posts/:_id/edit', {
-  name: 'postEdit',
+Router.route('/spaces/:_id/edit', {
+  name: 'spaceEdit',
   waitOn: function() { 
-    return Meteor.subscribe('singlePost', this.params._id);
+    return Meteor.subscribe('singleSpace', this.params._id);
   },
-  data: function() { return Posts.findOne(this.params._id); }
+  data: function() { return Spaces.findOne(this.params._id); }
 });
 
-Router.route('/submit', {name: 'postSubmit'});
+Router.route('/submit', {name: 'spaceSubmit'});
 
 var requireLogin = function() {
   if (! Meteor.user()) {
@@ -92,5 +92,5 @@ var requireLogin = function() {
   }
 }
 
-Router.onBeforeAction('dataNotFound', {only: 'postPage'});
-Router.onBeforeAction(requireLogin, {only: 'postSubmit'});
+Router.onBeforeAction('dataNotFound', {only: 'spacePage'});
+Router.onBeforeAction(requireLogin, {only: 'spaceSubmit'});

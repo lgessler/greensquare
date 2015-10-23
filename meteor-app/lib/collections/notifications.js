@@ -7,14 +7,14 @@ Notifications.allow({
   }
 });
 
-createCommentNotification = function(comment) {
-  var post = Posts.findOne(comment.postId);
-  if (comment.userId !== post.userId) {
+createReviewNotification = function(review) {
+  var space = Spaces.findOne(review.spaceId);
+  if (review.userId !== space.userId) {
     Notifications.insert({
-      userId: post.userId,
-      postId: post._id,
-      commentId: comment._id,
-      commenterName: comment.author,
+      userId: space.userId,
+      spaceId: space._id,
+      reviewId: review._id,
+      reviewerName: review.author,
       read: false
     });
   }
