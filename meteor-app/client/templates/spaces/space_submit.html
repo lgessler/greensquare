@@ -1,9 +1,12 @@
 <template name="spaceSubmit">
   <form class="main form page">
     <div class="form-group {{errorClass 'url'}}">
-      <label class="control-label" for="url">URL</label>
       <div class="controls">
-          <input name="url" id="url" type="text" value="" placeholder="Your URL" class="form-control"/>
+          <label class="control-label" for="url">URL</label>
+          <input name="loc" id="loc" type="text" value="" placeholder="Location" class="form-control"/>
+          <input name="picUrl" id="picUrl" type="text" value="" placeholder="Picture URL" class="form-control"/>
+          <input name="title" id="title" type="text" value="" placeholder="Name of Space" class="form-control"/>
+          <input name="address" id="address" type="text" value="" placeholder="Address" class="form-control"/>
           <span class="help-block">{{errorMessage 'url'}}</span>
       </div>
     </div>
