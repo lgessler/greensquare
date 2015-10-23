@@ -2,29 +2,33 @@
   <form class="main form page">
     <div class="form-group {{errorClass 'url'}}">
       <div class="controls">
-          <label class="control-label" for="url">URL</label>
-          <input name="loc" id="loc" type="text" value="" placeholder="Location" class="form-control"/>
-          <input name="picUrl" id="picUrl" type="text" value="" placeholder="Picture URL" class="form-control"/>
+          <button onclick="getCoords()" type="button">Get GPS Coordinates</button>
+      </div>
+      <div class="controls">
+          <label class="control-label" for="latitude">Latitude</label>
+          <input name="latitude" id="latitude" type="text" value="" class="form-control"/>
+          <label class="control-label" for="longitude">Longitude</label>
+          <input name="longitude" id="longitude" type="text" value="" class="form-control"/>
+
+          <script>
+              function getCoords() {
+                  navigator.geolocation.getCurrentPosition(function(position) {
+                      Session.set('lat', position.coords.latitude);
+                      Session.set('lon', position.coords.longitude);
+                  });
+
+                  document.getElementById("latitude").value = Session.get('lat');
+                  document.getElementById("longitude").value = Session.get('lon');
+              }
+          </script>
+
+          <label class="control-label" for="title">Title</label>
           <input name="title" id="title" type="text" value="" placeholder="Name of Space" class="form-control"/>
+          <label class="control-label" for="address">Address</label>
           <input name="address" id="address" type="text" value="" placeholder="Address" class="form-control"/>
           <span class="help-block">{{errorMessage 'url'}}</span>
       </div>
     </div>
-    <div class="form-group {{errorClass 'title'}}">
-      <label class="control-label" for="title">Title</label>
-      <div class="controls">
-          <input name="title" id="title" type="text" value="" placeholder="Name your space" class="form-control"/>
-          <span class="help-block">{{errorMessage 'title'}}</span>
-      </div>
-    </div>
-    <div class ="form-group {{errorClass 'title'}}">
-      <label class = "control-label" for="title">Photo</label>
-      <div class="controls">
-        <input name="image" id="image" type="text" value="" placeholder="Photo of space" class="form-control"/>
-        <span class="help-block">{{errorMessage 'title'}}</span>
-      </div>
-    </div>
-
     <input type="submit" value="Submit" class="btn btn-primary"/>
   </form>
 </template>
