@@ -2,7 +2,7 @@
   <div class="space-page page">
     {{> spaceItem}}
   
-    <ul class="reviews">
+    <ul class="comments">
       {{#each reviews}}
         {{> reviewItem}}
       {{/each}}
@@ -11,7 +11,10 @@
     {{#if currentUser}}
       {{> reviewSubmit}}
     {{else}}
-      <p>Please log in to leave a review.</p>
+      <p>Please log in to leave a comment.</p>
     {{/if}}
   </div>
+    <div class="map-container">
+        {{>mapItem}}
+    </div>
 </template>
