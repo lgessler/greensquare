@@ -27,11 +27,14 @@ Template.spaceSubmit.events({
       userId: user._id,
       submitter: user.username,
       picUrl: $(e.target).find('[name=picUrl]').val(),
-      date: new Date()
+      date: new Date(),
+      reviews: 0
     });
 
     // No validation or security for now
     var spaceId = Spaces.insert(space);
+
+    console.log(space);
     Router.go('spacePage', {_id: spaceId});
   }
 });
