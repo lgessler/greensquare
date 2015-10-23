@@ -11,7 +11,6 @@ Meteor.publish('singleSpace', function(id) {
   return Spaces.find(id);
 });
 
-
 Meteor.publish('reviews', function(spaceId) {
   check(spaceId, String);
   return Reviews.find({spaceId: spaceId});

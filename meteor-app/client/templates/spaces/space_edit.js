@@ -22,10 +22,6 @@ Template.spaceEdit.events({
       title: $(e.target).find('[name=title]').val()
     }
     
-    var errors = validateSpace(spaceProperties);
-    if (errors.title || errors.url)
-      return Session.set('spaceEditErrors', errors);
-    
     Spaces.update(currentSpaceId, {$set: spaceProperties}, function(error) {
       if (error) {
         // display the error to the user
