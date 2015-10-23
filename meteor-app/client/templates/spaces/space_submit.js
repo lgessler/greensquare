@@ -16,8 +16,8 @@ Template.spaceSubmit.events({
     e.preventDefault();
     
     var space = {
-      loc: $(e.target).find('[name=loc]').val(),
-      picUrl: $(e.target).find('[name=picUrl]').val(),
+      latitude: $(e.target).find('[name=latitude]').val(),
+      longitude: $(e.target).find('[name=longitude]').val(),
       title: $(e.target).find('[name=title]').val(),
       address: $(e.target).find('[name=address]').val()
     };
@@ -26,11 +26,14 @@ Template.spaceSubmit.events({
     space = _.extend(space, {
       userId: user._id,
       submitter: user.username,
+      picUrl: $(e.target).find('[name=picUrl]').val(),
       date: new Date(),
+      reviews: 0
     });
 
     // No validation or security for now
     var spaceId = Spaces.insert(space);
+
     Router.go('spacePage', {_id: spaceId});
   }
 });

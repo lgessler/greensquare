@@ -1,19 +1,3 @@
-Template.spacesList.helpers({
-  spaces: function () {
-    all = Spaces.find({}).fetch();
-    chunks = [];
-    size = 3;
-    while (all.length > size) {
-      chunks.push({ row: all.slice(0, size)});
-      all = all.slice(size);
-    }
-    chunks.push({row: all});
-    return chunks;
-  }
-});
-
-
-
 
 Template.spacesList.events({
   'click .load-more': function(e) {
