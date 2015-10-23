@@ -29,15 +29,19 @@ body {
 
 .navbar {
   margin-bottom: 10px;
-  background-color: #7bc051;
+  background-color: #99da54;
   border-width: 0px;
   border-radius: 0px 0px 3px 3px;
-  
+  color: white;
 }
   /* line 32, ../sass/style.scss */
   .navbar .navbar-inner {
     border-radius: 0px 0px 3px 3px; }
 
+  .navbar-collapse {
+    color:white;
+
+  }
 
 
 #spinner {
