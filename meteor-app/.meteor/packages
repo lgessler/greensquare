@@ -32,5 +32,4 @@ mrt:jquery-imagesloaded
 accounts-facebook
 cfs:standard-packages
 cfs:filesystem
-cfs:gridfs
 service-configuration

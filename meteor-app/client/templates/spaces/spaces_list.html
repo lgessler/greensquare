@@ -1,13 +1,16 @@
+
+
+
 <template name="spacesList">
-  <div class="container-fluid">
-    <div class="">
+  <div class="container">
+    <div class="spaces">
       <!-- Set up reactive grid -->
-      <div id="spacegrid" class="wrapper">
+      <div id="spacegrid">
         {{#each spaces}}
           {{> spaceItem}}
         {{/each}}
       </div>
-      
+
       {{#if nextPath}}
         <a class="load-more" href="{{nextPath}}">Load more</a>
       {{else}}
