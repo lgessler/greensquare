@@ -28,7 +28,7 @@ Template.body.onCreated(function() {
     var marker = new google.maps.Marker({
       position: map.options.center,
       map: map.instance,
-      icon: '/siteAssets/gsmarker40.png',
+      icon: "/siteAssets/gsmarker40.png",
       title: this.title
     });
   });
