@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Roboto'; /*a name to be used later*/
-  src: url('\siteAssets\robo.ttf'); /*URL to font*/
+  font-family: 'Robold'; /*a name to be used later*/
+  src: url('Rale.ttf'); /*URL to font*/
 }
 
 .grid-block, .main, .space, .reviews li, .review-form {

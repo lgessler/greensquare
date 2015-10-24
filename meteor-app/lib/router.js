@@ -9,7 +9,7 @@ Router.configure({
 
 SpacesBaseController = RouteController.extend({
   template: 'spacesList',
-  increment: 5, 
+  increment: 100,
   spacesLimit: function() {
     return parseInt(this.params.spacesLimit) || this.increment;
   },
@@ -19,13 +19,10 @@ SpacesBaseController = RouteController.extend({
   subscriptions: function() {
     this.spacesSub = Meteor.subscribe('spaces', this.findOptions());
   },
-  spaces: function() {
-    return Spaces.find({}, this.findOptions());
-  },
   data: function() {
     var self = this;
     return {
-      spaces: self.spaces(),
+      spaces: self.template.hackySpaces,
       ready: self.spacesSub.ready,
       nextPath: function() {
         if (self.spaces().count() === self.spacesLimit())
@@ -39,6 +36,9 @@ NearSpacesController = SpacesBaseController.extend({
   sort: {submitted: -1, _id: -1},
   nextPath: function() {
     return Router.routes.nearSpaces.path({spacesLimit: this.spacesLimit() + this.increment})
+  },
+  spaces: function() {
+    return Spaces.find({}, this.findOptions());
   }
 });
 
@@ -46,18 +46,24 @@ TopSpacesController = SpacesBaseController.extend({
   sort: {submitted: -1, reviews: -1, _id: -1},
   nextPath: function() {
     return Router.routes.topSpaces.path({spacesLimit: this.spacesLimit() + this.increment})
-  }
+  },
+  spaces: function() {
+    return Spaces.find({}, this.findOptions());
+  },
 });
 
 Router.route('/', {
   name: 'home',
-  controller: NearSpacesController
+  onBeforeAction: function() {
+    Router.go('nearSpaces');
+  }
 });
 
 Router.route('/near/:spacesLimit?', {name: 'nearSpaces'});
 
-Router.route('/top/:spacesLimit', {name: 'topSpaces'});
+Router.route('/top/:spacesLimit?', {name: 'topSpaces'});
 
+Router.route('splash', {name: 'splash'});
 
 Router.route('/spaces/:_id', {
   name: 'spacePage',
@@ -90,7 +96,7 @@ var requireLogin = function() {
   } else {
     this.next();
   }
-}
+};
 
 Router.onBeforeAction('dataNotFound', {only: 'spacePage'});
 Router.onBeforeAction(requireLogin, {only: 'spaceSubmit'});
