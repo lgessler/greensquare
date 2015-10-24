@@ -16,4 +16,6 @@ Clone and run:
 
 # License
 
-MIT.
+MIT. This project is a derivative of
+[Microscope](https://github.com/DiscoverMeteor/Microscope). (Their license is
+included in `LICENSE_MICROSCOPE`.
