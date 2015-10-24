@@ -1,9 +1,24 @@
 <template name="reviewItem">
-  <li>
-    <h4>
-      <span class="author">{{author}}</span>
-      <span class="date">on {{submittedText}}</span>
-    </h4>
-    <p>{{body}}</p>
-  </li>
+    <li>
+        <h4>
+            <span class="author">{{author}}</span>
+            <span class="date">on {{submittedText}}</span>
+        </h4>
+        <p>{{body}}</p>
+        {{#if equals rating "1"}}
+            <p>Rating: <img class="img-rounded" src="/siteAssets/smallleaf.png"/></p>
+        {{/if}}
+        {{#if equals rating  "2"}}
+            <p>Rating: <img class="img-rounded" src="/siteAssets/smallleaf.png"/><img class="img-rounded" src="/siteAssets/smallleaf.png"/></p>
+    {{/if}}
+        {{#if equals rating  "3"}}
+            <p>Rating: <img class="img-rounded" src="/siteAssets/smallleaf.png"/><img class="img-rounded" src="/siteAssets/smallleaf.png"/><img class="img-rounded" src="/siteAssets/smallleaf.png"/></p>
+        {{/if}}
+        {{#if equals rating  "4"}}
+            <p>Rating: <img class="img-rounded" src="/siteAssets/smallleaf.png"/><img class="img-rounded" src="/siteAssets/smallleaf.png"/><img class="img-rounded" src="/siteAssets/smallleaf.png"/><img class="img-rounded" src="/siteAssets/smallleaf.png"/></p>
+        {{/if}}
+        {{#if equals rating "5"}}
+            <p>Rating: <img class="img-rounded" src="/siteAssets/smallleaf.png"/><img class="img-rounded" src="/siteAssets/smallleaf.png"/><img class="img-rounded" src="/siteAssets/smallleaf.png"/><img class="img-rounded" src="/siteAssets/smallleaf.png"/><img class="img-rounded" src="/siteAssets/smallleaf.png"/></p>
+        {{/if}}
+    </li>
 </template>

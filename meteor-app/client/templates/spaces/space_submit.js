@@ -12,6 +12,19 @@ Template.spaceSubmit.helpers({
 });
 
 Template.spaceSubmit.events({
+  'click .btn-info': function(e) {
+    e.preventDefault();
+    $(e.target).attr("class", "btn btn-warning");
+    $(e.target).text("Loading...");
+
+    navigator.geolocation.getCurrentPosition(function(position) {
+      $(e.target.parentNode).find('[name=latitude]').val(position.coords.latitude);
+      $(e.target.parentNode).find('[name=longitude]').val(position.coords.longitude);
+
+      $(e.target).attr("class", "btn btn-info");
+      $(e.target).text("Get GPS Coordinates");
+    });
+  },
   'submit form': function(e) {
     e.preventDefault();
     
@@ -19,41 +32,19 @@ Template.spaceSubmit.events({
       latitude: $(e.target).find('[name=latitude]').val(),
       longitude: $(e.target).find('[name=longitude]').val(),
       title: $(e.target).find('[name=title]').val(),
-      address: $(e.target).find('[name=address]').val(),
-      filename: $(e.target).find('[name=fn]').val()
+      address: $(e.target).find('[name=address]').val()
     };
-    console.log('ADKFJHLJFKDSJFLKSJDFLKJSDLKFJLSK');
-    //console.log(space.filename);
-    tempArray = space.filename.split('\\');
-    space.filename = tempArray[tempArray.length-1];
-    console.log(space.filename);
+
     var user = Meteor.user();
     space = _.extend(space, {
       userId: user._id,
       submitter: user.username,
-      date: new Date(),
-      reviews: 0
-    });
-
-    FS.Utility.eachFile(event, function(file) {
-      Images.insert(file, function (err, fileObj) {
-        // Insert new doc with ID fileObj._id,
-        // and kick off the data upload using HTTP.
-      });
+      picUrl: $(e.target).find('[name=picUrl]').val(),
+      date: new Date()
     });
 
     // No validation or security for now
     var spaceId = Spaces.insert(space);
     Router.go('spacePage', {_id: spaceId});
-
   }
-
-/* 'click .myFileInput': function(event) {
-    FS.Utility.eachFile(event, function(file) {
-      Images.insert(file, function (err, fileObj) {
-        // Insert new doc with ID fileObj._id,
-        // and kick off the data upload using HTTP.
-      });
-    });
-  }*/
 });

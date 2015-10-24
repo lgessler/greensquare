@@ -16,6 +16,8 @@ body {
   background: #eee;
   color: #666666;
   font-family: 'Roboto';
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #main {
@@ -28,12 +30,12 @@ body {
 }
 
 .navbar {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   background-color: #99da54;
   border-width: 0px;
   border-radius: 0px 0px 3px 3px;
   color: white;
-  padding-bottom: 20px;
+  padding-bottom: 25px;
 }
   /* line 32, ../sass/style.scss */
   .navbar .navbar-inner {
@@ -174,7 +176,88 @@ body {
   overflow: hidden;
 
 }
+.card{
+  position: relative;
+  width: 100%;
+  color: white;
+  margin-bottom: 20px;
 
+}
 .card-block{
+  bottom: 0px;
+  position: absolute;
   background-color:white;
+  margin-top: 0px;
+  display: block;
+  background: rgba(110, 180, 80, .7);
+}
+
+.cardimg{
+
+  background-repeat: no-repeat;
+  height: 290px;
+  width: 100%;
+  margin: 0px;
+  overflow: hidden;
+
+}
+
+.card-title {
+  margin: 0px;
+  z-index: 10;
+  padding: 0px;
+  padding-left: 30px;
+  padding-top: 10px;
+}
+
+.card-text {
+
+  padding-left: 30px;
+  padding-top: 10px;
+}
+
+a:link {  color : #fff;  }
+a:visited { color : #fff;}
+img {
+  display: block;
+  margin: 0px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+#card{
+  margin: auto;
+  width: 100%;
+
+
+}
+.rating {
+  float:left;
+  width:300px;
+}
+.rating span { float:right; position:relative; }
+.rating span input {
+  position:absolute;
+  top:0px;
+  left:0px;
+  opacity:0;
+}
+.rating span label {
+  display:inline-block;
+  width:30px;
+  height:30px;
+  text-align:center;
+  color:#FFF;
+  background:#ccc;
+  font-size:30px;
+  margin-right:2px;
+  line-height:30px;
+  border-radius:50%;
+  -webkit-border-radius:50%;
+}
+.rating span:hover ~ span label,
+.rating span:hover label,
+.rating span.checked label,
+.rating span.checked ~ span label {
+  background:#008000;
+  color:#FFF;
 }
