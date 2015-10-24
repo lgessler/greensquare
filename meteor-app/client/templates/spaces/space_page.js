@@ -25,11 +25,20 @@ Template.body.onCreated(function() {
   // We can use the `ready` callback to interact with the map API once the map is ready.
   GoogleMaps.ready('map', function(map) {
     // Add a marker to the map once it's ready
-    var marker = new google.maps.Marker({
+    var placeMarker = new google.maps.Marker({
       position: map.options.center,
       map: map.instance,
-      icon: "/siteAssets/gsmarker40.png",
+      icon: "/siteAssets/gsm40.png",
       title: this.title
     });
+    var selfMarker = new google.maps.Marker({
+      position: (this.latitude, this.longitude),
+      map: map.instance
+    })
+
+    var geo = new GeoCoder();
+    var result = geo.geocode(this.address);
+    console.log([result]);
+
   });
 });

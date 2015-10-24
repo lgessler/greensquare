@@ -15,7 +15,7 @@
 body {
   background: #eee;
   color: #666666;
-  font-family: 'Robold', 'sans-serif';
+  font-family: 'Roboto';
   margin-left: auto;
   margin-right: auto;
 }
@@ -36,7 +36,6 @@ body {
   border-radius: 0px 0px 3px 3px;
   color: white;
   padding-bottom: 25px;
-  font-size: medium;
 }
   /* line 32, ../sass/style.scss */
   .navbar .navbar-inner {
@@ -46,11 +45,6 @@ body {
     color:white;
 
   }
-
-.navbar-default .navbar-nav > li > a {
-  color: #333277;
-  font-family: 'Robold', 'Arial';
-}
 
 
 #spinner {
@@ -214,7 +208,6 @@ body {
   padding: 0px;
   padding-left: 30px;
   padding-top: 10px;
-  font-family: 'Robold', 'sans-serif';
 }
 
 .card-text {
@@ -227,14 +220,7 @@ body {
   position: absolute;
   right: 10px;
   text-align: right;
-  margin-bottom: -20px;
 }
-
-.navbar-default .navbar-nav > li > a {
-  color: #333277;
-  font-family: 'Robold', 'Arial';
-}
-
 a:link {  color : #fff;  }
 a:visited { color : #fff;}
 img {

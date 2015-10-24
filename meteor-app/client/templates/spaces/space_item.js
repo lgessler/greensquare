@@ -21,6 +21,15 @@ Template.spaceItem.helpers({
 
     console.log(d);
     return d.toFixed(2);
+  },
+  getImg: function() {
+    var strBase = '/open-space-';
+    var randInt = Math.floor((Math.random() * 5) + 1);
+    //var strAdd = toString(randInt);
+    var strReturn = strBase.concat(randInt);
+    strReturn = strReturn.concat(".jpg");
+    console.log(strReturn);
+    return strReturn;
   }
 });
 
