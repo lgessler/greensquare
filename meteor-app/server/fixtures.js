@@ -13,7 +13,7 @@ if (Spaces.find().count() === 0) {
   var sacha = Meteor.users.findOne(sachaId);
   
   var telescopeId = Spaces.insert({
-    title: 'Introducing Telescope',
+    title: 'asdf',
     userId: sacha._id,
     author: sacha.profile.name,
     url: 'http://sachagreif.com/introducing-telescope/',
@@ -27,7 +27,8 @@ if (Spaces.find().count() === 0) {
     userId: tom._id,
     author: tom.profile.name,
     submitted: new Date(now - 5 * 3600 * 1000),
-    body: 'Interesting project Sacha, can I get involved?'
+    body: 'Interesting project Sacha, can I get involved?',
+    rating: "5"
   });
   
   Reviews.insert({
@@ -35,10 +36,11 @@ if (Spaces.find().count() === 0) {
     userId: sacha._id,
     author: sacha.profile.name,
     submitted: new Date(now - 3 * 3600 * 1000),
-    body: 'You sure can Tom!'
+    body: 'You sure can Tom!',
+    rating: "5"
   });
   
-  Spaces.insert({
+Spaces.insert({
     title: 'Meteor',
     userId: tom._id,
     author: tom.profile.name,
@@ -60,12 +62,12 @@ if (Spaces.find().count() === 0) {
     upvoters: [], votes: 0
   });
   
-  for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < 2; i++) {
     Spaces.insert({
-      title: 'Test space #' + i,
+      title: 'Test space #' + 1 + i,
       author: sacha.profile.name,
       userId: sacha._id,
-      url: 'http://google.com/?q=test-' + i,
+      url: 'http://google.com/?q=test-' + i + 1,
       submitted: new Date(now - i * 3600 * 1000 + 1),
       reviewsCount: 0,
       upvoters: [], votes: 0
