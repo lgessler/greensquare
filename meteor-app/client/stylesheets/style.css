@@ -172,4 +172,9 @@ body {
   width: 800px;
   height: 300px;
   overflow: hidden;
+
+}
+
+.card-block{
+  background-color:white;
 }

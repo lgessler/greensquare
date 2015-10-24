@@ -21,7 +21,6 @@ underscore
 iron:router@1.0.0-rc.1
 sacha:spin
 accounts-password
-ian:accounts-ui-bootstrap-3
 check
 audit-argument-checks
 insecure
@@ -33,3 +32,5 @@ accounts-facebook
 cfs:standard-packages
 cfs:filesystem
 service-configuration
+easy:search
+chuikoff:accounts-ui-bootstrap-4
