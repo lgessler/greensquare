@@ -45,7 +45,9 @@ if (Spaces.find().count() === 0) {
     url: 'http://meteor.com',
     submitted: new Date(now - 10 * 3600 * 1000),
     reviewsCount: 0,
-    upvoters: [], votes: 0
+    upvoters: [], votes: 0,
+    lat: 120,
+    lon: 100
   });
   
   Spaces.insert({
