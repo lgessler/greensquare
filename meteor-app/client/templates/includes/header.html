@@ -7,13 +7,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{pathFor 'home'}}"><img src="\siteAssets\greensqlogo.png" alt="GreenSquare" width="300" height="50"></a>
+      <a class="navbar-brand" href="{{pathFor 'nearSpaces'}}"><img src="\siteAssets\greensqlogo.png" alt="GreenSquare" width="300" height="50"></a>
     </div>
     <div class="collapse navbar-collapse" id="navigation" >
       <ul class="nav navbar-nav">
         {{#if currentUser}}
           <li class="{{activeRouteClass 'spaceSubmit'}}">
-            <a href="{{pathFor 'nearSpaces'}}">Submit Space</a>
+            <a href="{{pathFor 'spaceSubmit'}}">Submit Space</a>
           </li>
           <li class="dropdown">
             {{> notifications}}
