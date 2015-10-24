@@ -56,7 +56,7 @@ Router.route('/', {
 
 Router.route('/near/:spacesLimit?', {name: 'nearSpaces'});
 
-Router.route('/top/:spacesLimit', {name: 'topSpaces'});
+Router.route('/top/:spacesLimit?', {name: 'topSpaces'});
 
 Router.route('splash', {name: 'splash'});
 
