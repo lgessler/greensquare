@@ -1,19 +1,16 @@
-
-Template.spacesList.events({
-  'click .load-more': function(e) {
-
+Template.spacesList.helpers({
+  hackySpaces: function() {
+    // change these later
+    // can't set the sorting functions in the router because the
+    // dist() function (for now) can't be run on the server
+    if (Router.current().route.getName() === "nearSpaces") {
+      return Spaces.find({}, {sort: {submitted: 1, _id: -1}});
+    } else if(Router.current().route.getName() === "topSpaces") {
+      return Spaces.find({}, {sort: {submitted: -1, _id: -1}});
+    }
   }
 });
-
 Template.spacesList.onRendered(function () {
-  /*var $container = $('#spacegrid');
-
-  $container.imagesLoaded(function () {
-    $container.masonry({
-      itemSelector: '.space'
-    });
-  });
-  */
   this.find('.wrapper')._uihooks = {
     insertElement: function (node, next) {
       $(node)
