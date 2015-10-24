@@ -8,9 +8,9 @@
             <a href="{{pathFor 'spacePage'}}">{{pluralize reviewsCount "review"}}</a>
             {{#if ownSpace}}<a href="{{pathFor 'spaceEdit'}}">Edit</a>{{/if}}
         </p>
-        <p class="card-dist">
-           You are {{dist}} miles away.
-        </p>
+        <div class="card-dist">
+           {{dist}} miles
+        </div>
     </div>
   </div>
 </template>
