@@ -42,7 +42,8 @@ Template.spaceSubmit.events({
       picUrl: $(e.target).find('[name=picUrl]').val(),
       date: new Date(),
       reviewsCount: 0,
-      reviewsAverage: 0
+      reviewsAverage: 0,
+      votes: 0
     });
 
     // No validation or security for now
