@@ -1,7 +1,14 @@
 <template name="spacePage">
-  <div class="space-page page">
+
+    <div class="imageView">
+        {{#each images}}
+            <div>
+                <a href="{{this.url}}" target="_blank"><img src="{{this.url store='thumbs' uploading='/images/uploading.gif' storing='/images/storing.gif'}}" alt="" class="thumbnail" /></a>
+            </div>
+        {{/each}}
+    </div>
+    <div class="space-page page">
     {{> spaceItem}}
-    <a href="{{this.filename}}" target="_blank"><img src="{{this.filename}}" alt=""/></a>
     <div class="map-container">
       {{> googleMap name="map" options=mapOptions}}
     </div>

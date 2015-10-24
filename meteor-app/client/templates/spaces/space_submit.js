@@ -12,9 +12,12 @@ Template.spaceSubmit.helpers({
 });
 
 Template.spaceSubmit.events({
-  'submit form': function(e) {
+  'submit form': function(event, template) {
     e.preventDefault();
-    
+    var fileObj = template.find('input:file');
+    Images.insert(fileObj.files[0], function(err, fileObj) {
+    });
+
     var space = {
       latitude: $(e.target).find('[name=latitude]').val(),
       longitude: $(e.target).find('[name=longitude]').val(),
@@ -22,7 +25,6 @@ Template.spaceSubmit.events({
       address: $(e.target).find('[name=address]').val(),
       filename: $(e.target).find('[name=fn]').val()
     };
-    console.log('ADKFJHLJFKDSJFLKSJDFLKJSDLKFJLSK');
     //console.log(space.filename);
     tempArray = space.filename.split('\\');
     space.filename = tempArray[tempArray.length-1];
@@ -34,13 +36,17 @@ Template.spaceSubmit.events({
       date: new Date(),
       reviews: 0
     });
-
-    FS.Utility.eachFile(event, function(file) {
+/*
+    FS.Utility.eachFile(e, function(file){
       Images.insert(file, function (err, fileObj) {
+          console.log("TESTFILES");
+        console.log(file);
         // Insert new doc with ID fileObj._id,
         // and kick off the data upload using HTTP.
       });
-    });
+      console.log("TESTFILES2");
+      console.log(file);
+    });*/
 
     // No validation or security for now
     var spaceId = Spaces.insert(space);
