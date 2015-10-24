@@ -14,14 +14,14 @@ if (Spaces.find().count() === 0) {
 
 
   var telescopeId = Spaces.insert({
-    title: 'Paulson Trail',
+    title: 'Sandy Bottom Nature Park',
     userId: max._id,
     author: max.profile.name,
     url: 'http://maxmiroff.com',
     submitted: new Date(now - 7 * 3600 * 1000),
     reviewsCount: 2,
-    latitude: 34,
-    longitude: -77,
+    latitude: 37.129458,
+    longitude: -76.433424,
     upvoters: [], votes: 0,
     rating: 5
   });
@@ -45,14 +45,14 @@ if (Spaces.find().count() === 0) {
   });
 
   Spaces.insert({
-    title: 'Sherwood Park',
+    title: 'Lafayette Park',
     userId: max._id,
     author: max.profile.name,
     url: 'http://meteor.com',
     submitted: new Date(now - 10 * 3600 * 1000),
     reviewsCount: 0,
-    latitude: 35,
-    longitude: -75,
+    latitude: 36.878801,
+    longitude: -76.281166,
     upvoters: [], votes: 0,
     rating: 4
   });
@@ -97,27 +97,27 @@ if (Spaces.find().count() === 0) {
   });
 
   Spaces.insert({
-    title: 'Billygoat Creek',
+    title: 'Town Point Park',
     userId: kevin._id,
     author: kevin.profile.name,
     url: 'http://themeteorbook.com',
     submitted: new Date(now - 12 * 3600 * 1000),
     reviewsCount: 0,
-    latitude: 35,
-    longitude: -73,
+    latitude: 36.850986,
+    longitude: -76.294340,
     upvoters: [], votes: 0,
     rating: 4
   });
 
   Spaces.insert({
-    title: 'Spotswood Field',
+    title: 'Bee Arthur Dog Park',
     userId: kevin._id,
     author: kevin.profile.name,
     url: 'http://themeteorbook.com',
     submitted: new Date(now - 12 * 3600 * 1000),
     reviewsCount: 0,
-    latitude: 33,
-    longitude: -79,
+    latitude: 36.853688,
+    longitude: -76.298987,
     upvoters: [], votes: 0,
     rating: 1
   });
