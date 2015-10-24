@@ -1,6 +1,6 @@
 <template name="spaceItem">
   <div class="card">
-      <img src="/open-space-1.jpg" class="cardimg" />
+      <img src={{getImg}} class="cardimg" />
     <div class="card card-block">
 
         <h4 class="card-title"><a href="{{pathFor 'spacePage'}}" >{{title}}</a></h4>
@@ -9,9 +9,9 @@
             <a href="{{pathFor 'spacePage'}}">{{pluralize reviewsCount "review"}} </a>
             {{#if ownSpace}}<a href="{{pathFor 'spaceEdit'}}">Edit</a>{{/if}}
         </p>
-        <p class="card-dist">
-           You are {{dist}} miles away.
-        </p>
+        <div class="card-dist">
+           {{dist}} miles
+        </div>
     </div>
   </div>
 </template>

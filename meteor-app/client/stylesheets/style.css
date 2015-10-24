@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Roboto'; /*a name to be used later*/
-  src: url('//localhost:3000/public/siteAssets/Roboto.ttf') format('truetype'); /*URL to font*/
+  font-family: 'Robold'; /*a name to be used later*/
+  src: url('Rale.ttf'); /*URL to font*/
 }
 
 .grid-block, .main, .space, .reviews li, .review-form {
@@ -13,7 +13,7 @@
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15); }
 
 body {
-  background: #eee;
+  background: #333;
   color: #666666;
   font-family: 'Roboto';
   margin-left: auto;
@@ -189,7 +189,7 @@ body {
   background-color:white;
   margin-top: 0px;
   display: block;
-  background: rgba(110, 180, 80, .7);
+  background: rgba(110, 190, 80, .8);
 }
 
 .cardimg{
@@ -219,19 +219,23 @@ body {
 .card-dist {
   position: absolute;
   right: 10px;
+  bottom: 20px;
   text-align: right;
+  font-size: large;
 }
 a:link {  color : #fff;  }
 a:visited { color : #fff;}
 img {
   display: block;
   margin: 0px;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 3px 3px 3px 3px;
 }
 
 #card{
   margin: auto;
   width: 100%;
+
+
 }
 .rating {
   float:left;
@@ -261,7 +265,27 @@ img {
 .rating span:hover label,
 .rating span.checked label,
 .rating span.checked ~ span label {
-  color:#FFF;
   background:#008000;
+  color:#FFF;
+}
+#main {
+  width: 100%;
+  height: 100%;
+}
+.splash{
+  background-image: url("/siteAssets/citybg.jpg");
+  background-repeat:no-repeat;
+  background-size:cover;
+  width: 100%;
+  height: 100%;
+
 }
 
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
+  margin-top: 15px; color: white; background-color: transparent; font-size: medium;
+}
+
+.navbar-default .navbar-nav > li > a{
+
+  margin-top: 15px; color: white; background-color: transparent; font-size: medium;
+}
