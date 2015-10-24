@@ -11,12 +11,6 @@
     </div>
     <div class="collapse navbar-collapse" id="navigation">
       <ul class="nav navbar-nav">
-        <li class="{{activeRouteClass 'home' 'newSpaces'}}">
-          <a href="{{pathFor 'newSpaces'}}">New</a>
-        </li>
-        <li class="{{activeRouteClass  'bestSpaces'}}">
-          <a href="{{pathFor 'bestSpaces'}}">Best</a>
-        </li>
         {{#if currentUser}}
           <li class="{{activeRouteClass 'spaceSubmit'}}">
             <a href="{{pathFor 'spaceSubmit'}}">Submit Space</a>
