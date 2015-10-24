@@ -24,7 +24,18 @@
 
           <!--</comment><input name="picUpload" id="picUpload" type="file"/>!-->
 
-          <input name="fn" class="myFileInput" type="file">
+          <input name="fn" id="fn" type="file" onchange=""/>
+          <script>
+          function getFile(){
+              console.log("form submit");
+              event.preventDefault();
+              FS.Utility.eachFile(event, function(file) {
+              Images.insert(file, function (err, fileObj){
+              });
+            });
+          }
+          </script>
+
           <!--button class="myFileInput">Upload</button!-->
 
           <label class="control-label" for="title">Title</label>

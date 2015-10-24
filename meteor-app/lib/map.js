@@ -1,6 +1,6 @@
 if (Meteor.isClient) {
     Meteor.startup(function() {
-        //GoogleMaps.load();
+        GoogleMaps.load();
 
     if (Session.get('lat') == undefined
         || Session.get('lon') == undefined) {

@@ -19,6 +19,8 @@ if (Spaces.find().count() === 0) {
     url: 'http://sachagreif.com/introducing-telescope/',
     submitted: new Date(now - 7 * 3600 * 1000),
     reviewsCount: 2,
+    latitude: 1,
+    longitude: 1,
     upvoters: [], votes: 0
   });
   
@@ -45,6 +47,8 @@ if (Spaces.find().count() === 0) {
     url: 'http://meteor.com',
     submitted: new Date(now - 10 * 3600 * 1000),
     reviewsCount: 0,
+    latitude: 1,
+    longitude: 1,
     upvoters: [], votes: 0
   });
   
@@ -55,6 +59,8 @@ if (Spaces.find().count() === 0) {
     url: 'http://themeteorbook.com',
     submitted: new Date(now - 12 * 3600 * 1000),
     reviewsCount: 0,
+    latitude: 1,
+    longitude: 1,
     upvoters: [], votes: 0
   });
   
@@ -66,6 +72,8 @@ if (Spaces.find().count() === 0) {
       url: 'http://google.com/?q=test-' + i,
       submitted: new Date(now - i * 3600 * 1000 + 1),
       reviewsCount: 0,
+      latitude: 1,
+      longitude: 1,
       upvoters: [], votes: 0
     });
   }

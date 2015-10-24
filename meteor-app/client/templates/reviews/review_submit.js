@@ -12,15 +12,20 @@ Template.reviewSubmit.helpers({
 });
 
 Template.reviewSubmit.events({
+    'click .selectme': function (e)  {
+        Session.set("$rating", $('input:radio[name=rating]:checked').val());
+        console.log( "$rating");
+
+    },
   'submit form': function(e, template) {
     e.preventDefault();
-    
     var $body = $(e.target).find('[name=body]');
     var review = {
+      rating: Session.get("$rating"),
       body: $body.val(),
       spaceId: template.data._id
     };
-
+    console.log(review);
     var user = Meteor.user();
     var space = Spaces.findOne(review.spaceId);
 
