@@ -1,17 +1,12 @@
 <template name="spaceItem">
-  <div style="background-size: {{width}}px auto;
-              background-image: url(/mouse.png);
-              background-repeat: no-repeat;
-              border: 1px solid black;
-              height: {{height}}px;
-              width: {{width}}px;"
-              class="thumbnail">
-    <div class="">
-      <p>
-        <a href="{{pathFor 'spacePage'}}">{{pluralize reviewsCount "review"}}</a>
-        {{#if ownSpace}}<a href="{{pathFor 'spaceEdit'}}">Edit</a>{{/if}}
-      </p>
+  <div class="card">
+      <img src="/open-space-1.jpg" class="card-img-top img-responsive" />
+    <div class="card card-block">
+        <a href="{{pathFor 'spacePage'}}"><h4 class="card-title">{{title}}</h4></a>
+        <p class="card-text">
+            <a href="{{pathFor 'spacePage'}}">{{pluralize reviewsCount "review"}}</a>
+            {{#if ownSpace}}<a href="{{pathFor 'spaceEdit'}}">Edit</a>{{/if}}
+        </p>
     </div>
-    <a href="{{pathFor 'spacePage'}}" class="discuss btn btn-default">Discuss</a>
   </div>
 </template>
