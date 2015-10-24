@@ -1,6 +1,11 @@
 # Greensquare
 
-Fill in later
+Greenspace discovery for humans. See demo at
+[greensquare.lgessler.com](http://greensquare.lgessler.com), and presentation
+slides at `doc/ppt.pdf`. 
+
+Developed for [Hack to Help Hampton
+Roads](http://hackathon.dominionenterprises.com/) on October 23-24 2015.
 
 # Usage
 
