@@ -4,11 +4,11 @@ var dist = function(space) {
   var lon1 = Number(space.longitude);
   var lon2 = Session.get('lon');
   console.log(lat1.type);
-  var ?1 = lat1.toRad(),
-      ?2 = lat2.toRad(),
-      ?? = (lon2-lon1).toRad(),
+  var phi1 = lat1.toRad(),
+      phi2 = lat2.toRad(),
+      dLambda = (lon2-lon1).toRad(),
       R = 6371000; // gives d in metres
-  var d = Math.acos( Math.sin(?1)*Math.sin(?2) + Math.cos(?1)*Math.cos(?2) * Math.cos(??) ) * R;
+  var d = Math.acos( Math.sin(phi1)*Math.sin(phi2) + Math.cos(phi1)*Math.cos(phi2) * Math.cos(dLambda) ) * R;
 
   console.log(d);
   return d.toFixed(2);
