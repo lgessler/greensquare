@@ -49,12 +49,16 @@ TopSpacesController = SpacesBaseController.extend({
   },
   spaces: function() {
     return Spaces.find({}, this.findOptions());
-  },
+  }
 });
 
-Router.route('/near/:spacesLimit?', {name: 'nearSpaces'});
+Router.route('/near/:spacesLimit?', {
+  name: 'nearSpaces'
+});
 
-Router.route('/top/:spacesLimit?', {name: 'topSpaces'});
+Router.route('/top/:spacesLimit?', {
+  name: 'topSpaces'
+});
 
 Router.route('/', {
   name: 'splash',
