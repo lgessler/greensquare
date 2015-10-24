@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Roboto'; /*a name to be used later*/
-  src: url('\siteAssets\robo.ttf'); /*URL to font*/
+  src: url('\siteAssets\Roboto.ttf'); /*URL to font*/
 }
 
 .grid-block, .main, .space, .reviews li, .review-form {
@@ -260,4 +260,12 @@ img {
 .rating span.checked ~ span label {
   background:#008000;
   color:#FFF;
+}
+figure
+{
+  width:25%;
+  float:left;
+  margin:0px;
+  text-align:center;
+  padding:0px;
 }
