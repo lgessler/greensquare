@@ -13,12 +13,14 @@ if (Spaces.find().count() === 0) {
   var sacha = Meteor.users.findOne(sachaId);
   
   var telescopeId = Spaces.insert({
-    title: 'asdf',
+    title: 'Introducing Telescope',
     userId: sacha._id,
     author: sacha.profile.name,
     url: 'http://sachagreif.com/introducing-telescope/',
     submitted: new Date(now - 7 * 3600 * 1000),
     reviewsCount: 2,
+    latitude: 1,
+    longitude: 1,
     upvoters: [], votes: 0
   });
   
@@ -27,8 +29,7 @@ if (Spaces.find().count() === 0) {
     userId: tom._id,
     author: tom.profile.name,
     submitted: new Date(now - 5 * 3600 * 1000),
-    body: 'Interesting project Sacha, can I get involved?',
-    rating: "5"
+    body: 'Interesting project Sacha, can I get involved?'
   });
   
   Reviews.insert({
@@ -36,17 +37,18 @@ if (Spaces.find().count() === 0) {
     userId: sacha._id,
     author: sacha.profile.name,
     submitted: new Date(now - 3 * 3600 * 1000),
-    body: 'You sure can Tom!',
-    rating: "5"
+    body: 'You sure can Tom!'
   });
   
-Spaces.insert({
+  Spaces.insert({
     title: 'Meteor',
     userId: tom._id,
     author: tom.profile.name,
     url: 'http://meteor.com',
     submitted: new Date(now - 10 * 3600 * 1000),
     reviewsCount: 0,
+    latitude: 1,
+    longitude: 1,
     upvoters: [], votes: 0
   });
   
@@ -57,17 +59,21 @@ Spaces.insert({
     url: 'http://themeteorbook.com',
     submitted: new Date(now - 12 * 3600 * 1000),
     reviewsCount: 0,
+    latitude: 1,
+    longitude: 1,
     upvoters: [], votes: 0
   });
   
-  for (var i = 0; i < 2; i++) {
+  for (var i = 0; i < 10; i++) {
     Spaces.insert({
-      title: 'Test space #' + 1 + i,
+      title: 'Test space #' + i,
       author: sacha.profile.name,
       userId: sacha._id,
-      url: 'http://google.com/?q=test-' + i + 1,
+      url: 'http://google.com/?q=test-' + i,
       submitted: new Date(now - i * 3600 * 1000 + 1),
       reviewsCount: 0,
+      latitude: 1,
+      longitude: 1,
       upvoters: [], votes: 0
     });
   }

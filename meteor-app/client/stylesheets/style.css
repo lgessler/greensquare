@@ -216,6 +216,11 @@ body {
   padding-top: 10px;
 }
 
+.card-dist {
+  position: absolute;
+  right: 10px;
+  text-align: right;
+}
 a:link {  color : #fff;  }
 a:visited { color : #fff;}
 img {
