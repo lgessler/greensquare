@@ -47,7 +47,9 @@ Template.spaceSubmit.events({
       userId: user._id,
       submitter: user.username,
       date: new Date(),
-      reviewsCount: 0
+      reviewsCount: 0,
+      reviewsAverage: 0,
+      votes: 0
     });
 
 /*    var file = template.find('input type=["file"]').files[0];

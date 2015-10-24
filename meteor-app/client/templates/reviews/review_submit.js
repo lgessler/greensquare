@@ -37,7 +37,12 @@ Template.reviewSubmit.events({
 
     // update the space with the number of reviews
     Spaces.update(review.spaceId, {$inc: {reviewsCount: 1}});
-
+    Spaces.update(review.spaceId, {$inc: {reviewsAverage: 0}});
+    console.log(Spaces.find({votes:0}).fetch()[0]['reviewsAverage']);
+    console.log(Spaces.find({votes:0}).fetch()[0]['reviewsCount']);
+    var num = (parseInt(review.rating)/(Spaces.find({votes:0}).fetch()[0]['reviewsCount']) - Spaces.find({votes:0}).fetch()[0]['reviewsAverage']/(Spaces.find({votes:0}).fetch()[0]['reviewsCount']));
+    num = parseFloat(num.toFixed(2));
+    Spaces.update(review.spaceId, {$inc: {reviewsAverage: num}});
     // create the review, save the id
     review._id = Reviews.insert(review);
 

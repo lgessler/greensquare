@@ -49,21 +49,27 @@ TopSpacesController = SpacesBaseController.extend({
   },
   spaces: function() {
     return Spaces.find({}, this.findOptions());
-  },
-});
-
-Router.route('/', {
-  name: 'home',
-  onBeforeAction: function() {
-    Router.go('nearSpaces');
   }
 });
 
-Router.route('/near/:spacesLimit?', {name: 'nearSpaces'});
+Router.route('/near/:spacesLimit?', {
+  name: 'nearSpaces'
+});
 
-Router.route('/top/:spacesLimit?', {name: 'topSpaces'});
+Router.route('/top/:spacesLimit?', {
+  name: 'topSpaces'
+});
 
-Router.route('splash', {name: 'splash'});
+Router.route('/', {
+  name: 'splash',
+  layoutTemplate: 'emptyLayout',
+  layout: 'splash',
+  onAfterAction: function() {
+    setTimeout( function() {
+      Router.go('nearSpaces');
+    }, 5000);
+  }
+});
 
 Router.route('/spaces/:_id', {
   name: 'spacePage',
