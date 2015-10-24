@@ -32,31 +32,19 @@ SpacesListController = RouteController.extend({
           return self.nextPath();
       }
     };
-  }
-});
-
-NewSpacesController = SpacesListController.extend({
-  sort: {submitted: -1, _id: -1},
-  nextPath: function() {
-    return Router.routes.newSpaces.path({spacesLimit: this.spacesLimit() + this.increment})
-  }
-});
-
-BestSpacesController = SpacesListController.extend({
+  },
   sort: {votes: -1, submitted: -1, _id: -1},
   nextPath: function() {
-    return Router.routes.bestSpaces.path({spacesLimit: this.spacesLimit() + this.increment})
+    return Router.routes.spacesList.path({spacesLimit: this.spacesLimit() + this.increment})
   }
 });
 
 Router.route('/', {
   name: 'home',
-  controller: NewSpacesController
+  controller: SpacesListController
 });
 
-Router.route('/new/:spacesLimit?', {name: 'newSpaces'});
-
-Router.route('/best/:spacesLimit?', {name: 'bestSpaces'});
+Router.route('/:spacesLimit?', {name: 'spacesList'});
 
 
 Router.route('/spaces/:_id', {
