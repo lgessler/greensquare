@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Roboto'; /*a name to be used later*/
-  src: url('\siteAssets\robo.ttf'); /*URL to font*/
+  src: url('//localhost:3000/public/siteAssets/Roboto.ttf') format('truetype'); /*URL to font*/
 }
 
 .grid-block, .main, .space, .reviews li, .review-form {
@@ -256,8 +256,6 @@ img {
   font-size:30px;
   margin-right:2px;
   line-height:30px;
-  border-radius:50%;
-  -webkit-border-radius:50%;
 }
 .rating span:hover ~ span label,
 .rating span:hover label,
