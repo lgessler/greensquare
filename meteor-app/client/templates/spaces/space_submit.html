@@ -2,26 +2,11 @@
   <form class="main form page">
     <div class="form-group {{errorClass 'url'}}">
       <div class="controls">
-          <button onclick="getCoords()" type="button">Get GPS Coordinates</button>
-      </div>
-      <div class="controls">
+          <div id="name" class="btn btn-info"> Get GPS Coordinates </div> <br/>
           <label class="control-label" for="latitude">Latitude</label>
           <input name="latitude" id="latitude" type="text" value="" class="form-control" readonly/>
           <label class="control-label" for="longitude">Longitude</label>
           <input name="longitude" id="longitude" type="text" value="" class="form-control" readonly/>
-
-          <script>
-              function getCoords() {
-                  navigator.geolocation.getCurrentPosition(function(position) {
-                      Session.set('lat', position.coords.latitude);
-                      Session.set('lon', position.coords.longitude);
-                  });
-
-                  document.getElementById("latitude").value = Session.get('lat');
-                  document.getElementById("longitude").value = Session.get('lon');
-              }
-          </script>
-
           <label class="control-label" for="title">Title</label>
           <input name="title" id="title" type="text" value="" placeholder="Name of Space" class="form-control"/>
           <label class="control-label" for="address">Address</label>

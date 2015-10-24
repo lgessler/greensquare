@@ -12,6 +12,19 @@ Template.spaceSubmit.helpers({
 });
 
 Template.spaceSubmit.events({
+  'click .btn-info': function(e) {
+    e.preventDefault();
+    $(e.target).attr("class", "btn btn-warning");
+    $(e.target).text("Loading...");
+
+    navigator.geolocation.getCurrentPosition(function(position) {
+      $(e.target.parentNode).find('[name=latitude]').val(position.coords.latitude);
+      $(e.target.parentNode).find('[name=longitude]').val(position.coords.longitude);
+
+      $(e.target).attr("class", "btn btn-info");
+      $(e.target).text("Get GPS Coordinates");
+    });
+  },
   'submit form': function(e) {
     e.preventDefault();
     
@@ -27,13 +40,11 @@ Template.spaceSubmit.events({
       userId: user._id,
       submitter: user.username,
       picUrl: $(e.target).find('[name=picUrl]').val(),
-      date: new Date(),
-      reviews: 0
+      date: new Date()
     });
 
     // No validation or security for now
     var spaceId = Spaces.insert(space);
-
     Router.go('spacePage', {_id: spaceId});
   }
 });
