@@ -44,7 +44,7 @@ Router.route('/', {
   controller: SpacesListController
 });
 
-Router.route('/:spacesLimit?', {name: 'spacesList'});
+Router.route('/listing/:spacesLimit', {name: 'spacesList'});
 
 
 Router.route('/spaces/:_id', {
