@@ -34,3 +34,4 @@ service-configuration
 easy:search
 chuikoff:accounts-ui-bootstrap-4
 dburles:collection-helpers
+aldeed:geocoder
