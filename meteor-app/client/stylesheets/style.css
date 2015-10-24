@@ -192,13 +192,12 @@ body {
   background: rgba(110, 190, 80, .8);
 }
 
-.cardimg{
+.card-img{
 
   background-repeat: no-repeat;
-  height: 290px;
   width: 100%;
+  height: auto;
   margin: 0px;
-  overflow: hidden;
 
 }
 
