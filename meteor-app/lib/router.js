@@ -58,6 +58,7 @@ Router.route('/near/:spacesLimit?', {name: 'nearSpaces'});
 
 Router.route('/top/:spacesLimit', {name: 'topSpaces'});
 
+Router.route('splash', {name: 'splash'});
 
 Router.route('/spaces/:_id', {
   name: 'spacePage',
@@ -90,7 +91,7 @@ var requireLogin = function() {
   } else {
     this.next();
   }
-}
+};
 
 Router.onBeforeAction('dataNotFound', {only: 'spacePage'});
 Router.onBeforeAction(requireLogin, {only: 'spaceSubmit'});

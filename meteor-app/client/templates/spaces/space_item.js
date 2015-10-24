@@ -16,7 +16,6 @@ Template.spaceItem.helpers({
     }
   },
   dist: function(){
-    console.log(this);
     var lat1 = Number(this.latitude);
     var lat2 = Session.get('lat');
     var lon1 = Number(this.longitude);
