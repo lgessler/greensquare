@@ -14,10 +14,15 @@ Template.spaceSubmit.helpers({
 Template.spaceSubmit.events({
   'click .btn-info': function(e) {
     e.preventDefault();
+    $(e.target).attr("class", "btn btn-warning");
+    $(e.target).text("Loading...");
 
     navigator.geolocation.getCurrentPosition(function(position) {
       $(e.target.parentNode).find('[name=latitude]').val(position.coords.latitude);
       $(e.target.parentNode).find('[name=longitude]').val(position.coords.longitude);
+
+      $(e.target).attr("class", "btn btn-info");
+      $(e.target).text("Get GPS Coordinates");
     });
   },
   'submit form': function(e) {
