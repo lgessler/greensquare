@@ -232,8 +232,6 @@ img {
 #card{
   margin: auto;
   width: 100%;
-
-
 }
 .rating {
   float:left;
@@ -256,11 +254,14 @@ img {
   font-size:30px;
   margin-right:2px;
   line-height:30px;
+  border-radius:50%;
+  -webkit-border-radius:50%;
 }
 .rating span:hover ~ span label,
 .rating span:hover label,
 .rating span.checked label,
 .rating span.checked ~ span label {
-  background:#008000;
   color:#FFF;
+  background:#008000;
 }
+

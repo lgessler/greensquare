@@ -4,8 +4,9 @@
     <div class="card card-block">
 
         <h4 class="card-title"><a href="{{pathFor 'spacePage'}}" >{{title}}</a></h4>
+        <p class="card-text"> Average Rating: {{reviewsAverage}} </p>
         <p class="card-text">
-            <a href="{{pathFor 'spacePage'}}">{{pluralize reviewsCount "review"}}</a>
+            <a href="{{pathFor 'spacePage'}}">{{pluralize reviewsCount "review"}} </a>
             {{#if ownSpace}}<a href="{{pathFor 'spaceEdit'}}">Edit</a>{{/if}}
         </p>
         <p class="card-dist">

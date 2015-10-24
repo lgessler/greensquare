@@ -41,7 +41,8 @@ Template.spaceSubmit.events({
       submitter: user.username,
       picUrl: $(e.target).find('[name=picUrl]').val(),
       date: new Date(),
-      reviewsCount: 0
+      reviewsCount: 0,
+      reviewsAverage: 0
     });
 
     // No validation or security for now
