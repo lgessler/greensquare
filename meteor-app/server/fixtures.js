@@ -23,7 +23,8 @@ if (Spaces.find().count() === 0) {
     latitude: 37.129458,
     longitude: -76.433424,
     upvoters: [], votes: 0,
-    rating: 5
+    rating: 5,
+    reviewsAverage: 0
   });
 
   Reviews.insert({
@@ -54,7 +55,8 @@ if (Spaces.find().count() === 0) {
     latitude: 36.878801,
     longitude: -76.281166,
     upvoters: [], votes: 0,
-    rating: 4
+    rating: 4,
+    reviewsAverage: 0
   });
 
   Spaces.insert({
@@ -67,7 +69,8 @@ if (Spaces.find().count() === 0) {
     latitude: 30,
     longitude: -70,
     upvoters: [], votes: 0,
-    rating: 4
+    rating: 4,
+    reviewsAverage: 0
   });
 
   Spaces.insert({
@@ -80,7 +83,8 @@ if (Spaces.find().count() === 0) {
     latitude: 34,
     longitude: -78,
     upvoters: [], votes: 0,
-    rating: 4
+    rating: 4,
+    reviewsAverage: 0
   });
 
   Spaces.insert({
@@ -93,7 +97,8 @@ if (Spaces.find().count() === 0) {
     latitude: 35,
     longitude: -73,
     upvoters: [], votes: 0,
-    rating: 4
+    rating: 4,
+    reviewsAverage: 0
   });
 
   Spaces.insert({
@@ -106,7 +111,8 @@ if (Spaces.find().count() === 0) {
     latitude: 36.850986,
     longitude: -76.294340,
     upvoters: [], votes: 0,
-    rating: 4
+    rating: 4,
+    reviewsAverage: 0
   });
 
   Spaces.insert({
@@ -119,7 +125,8 @@ if (Spaces.find().count() === 0) {
     latitude: 36.853688,
     longitude: -76.298987,
     upvoters: [], votes: 0,
-    rating: 1
+    rating: 1,
+    reviewsAverage: 0
   });
 
   Spaces.insert({
@@ -132,7 +139,8 @@ if (Spaces.find().count() === 0) {
     latitude: 33,
     longitude: -21,
     upvoters: [], votes: 0,
-    rating: 2
+    rating: 2,
+    reviewsAverage: 0
   });
 
   Spaces.insert({
@@ -145,7 +153,8 @@ if (Spaces.find().count() === 0) {
     latitude: 41,
     longitude: 60,
     upvoters: [], votes: 0,
-    rating: 4
+    rating: 4,
+    reviewsAverage: 0
   })
 
   Spaces.insert({
@@ -158,7 +167,8 @@ if (Spaces.find().count() === 0) {
     latitude: 44,
     longitude: 79,
     upvoters: [], votes: 0,
-    rating: 4
+    rating: 4,
+    reviewsAverage: 0
   });
 
 }
