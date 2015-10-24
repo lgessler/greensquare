@@ -58,7 +58,11 @@ Router.route('/near/:spacesLimit?', {name: 'nearSpaces'});
 
 Router.route('/top/:spacesLimit', {name: 'topSpaces'});
 
-Router.route('splash', {name: 'splash'});
+Router.route('splash', {
+  name: 'splash',
+  layoutTemplate: 'emptyLayout',
+  template: 'splash'
+});
 
 Router.route('/spaces/:_id', {
   name: 'spacePage',
