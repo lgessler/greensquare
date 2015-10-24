@@ -97,14 +97,66 @@ if (Spaces.find().count() === 0) {
   });
 
   Spaces.insert({
-    title: 'Pond by Clark Street',
+    title: 'Billygoat Creek',
     userId: kevin._id,
     author: kevin.profile.name,
     url: 'http://themeteorbook.com',
     submitted: new Date(now - 12 * 3600 * 1000),
     reviewsCount: 0,
-    latitude: 1,
-    longitude: 1,
+    latitude: 35,
+    longitude: -73,
+    upvoters: [], votes: 0,
+    rating: 4
+  });
+
+  Spaces.insert({
+    title: 'Spotswood Field',
+    userId: kevin._id,
+    author: kevin.profile.name,
+    url: 'http://themeteorbook.com',
+    submitted: new Date(now - 12 * 3600 * 1000),
+    reviewsCount: 0,
+    latitude: 33,
+    longitude: -79,
+    upvoters: [], votes: 0,
+    rating: 1
+  });
+
+  Spaces.insert({
+    title: 'Nature Trail in Sunrise Valley',
+    userId: kevin._id,
+    author: kevin.profile.name,
+    url: 'http://themeteorbook.com',
+    submitted: new Date(now - 12 * 3600 * 1000),
+    reviewsCount: 0,
+    latitude: 33,
+    longitude: -21,
+    upvoters: [], votes: 0,
+    rating: 2
+  });
+
+  Spaces.insert({
+    title: 'Open Lot #540',
+    userId: kevin._id,
+    author: kevin.profile.name,
+    url: 'http://themeteorbook.com',
+    submitted: new Date(now - 12 * 3600 * 1000),
+    reviewsCount: 0,
+    latitude: 41,
+    longitude: 60,
+    upvoters: [], votes: 0,
+    rating: 4
+  })
+
+  Spaces.insert({
+    title: 'Open Lot #106',
+    userId: kevin._id,
+    author: kevin.profile.name,
+    url: 'http://themeteorbook.com',
+    submitted: new Date(now - 12 * 3600 * 1000),
+    reviewsCount: 0,
+    latitude: 44,
+    longitude: 79,
     upvoters: [], votes: 0,
     rating: 4
   });
