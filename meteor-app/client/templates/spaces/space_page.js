@@ -36,9 +36,10 @@ Template.body.onCreated(function() {
       map: map.instance
     })
 
-    var geo = new GeoCoder();
-    var result = geo.geocode(this.address);
-    console.log([result]);
+    //var geo = new GeoCoder();
+    //var result = geo.geocode(this.address);
+    //console.log([result]);
+    console.log("Marker Method Reached");
 
   });
 });
