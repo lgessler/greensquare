@@ -1,17 +1,21 @@
 <template name="spaceItem">
-  <div class="card">
-      <img src={{getImg}} class="card-img" />
-    <div class="card card-block">
+    <div class="card">
+        <img src={{getImg}} class="card-img" />
+        <div class="card card-block">
 
-        <h4 class="card-title"><a href="{{pathFor 'spacePage'}}" >{{title}}</a></h4>
-        <p class="card-text"> Average Rating: {{reviewsAverage}} </p>
-        <p class="card-text">
-            <a href="{{pathFor 'spacePage'}}">{{pluralize reviewsCount "review"}} </a>
-            {{#if ownSpace}}<a href="{{pathFor 'spaceEdit'}}">Edit</a>{{/if}}
-        </p>
-        <div class="card-dist">
-           {{dist}} miles
+            <h4 class="card-title"><a href="{{pathFor 'spacePage'}}" >{{title}}</a></h4>
+            {{#if equals reviewsAverage 0}}
+            <p class="card-text"> </p>
+            {{else}}
+                <p class="card-text"> Average Rating: {{reviewsAverage}} </p>
+            {{/if}}
+            <p class="card-text">
+                <a href="{{pathFor 'spacePage'}}">{{pluralize reviewsCount "review"}} </a>
+                {{#if ownSpace}}<a href="{{pathFor 'spaceEdit'}}">Edit</a>{{/if}}
+            </p>
+            <div class="card-dist">
+                {{dist}} miles
+            </div>
         </div>
     </div>
-  </div>
 </template>

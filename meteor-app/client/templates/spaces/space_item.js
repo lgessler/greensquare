@@ -47,3 +47,6 @@ Template.spaceItem.events({
     Meteor.call('upvote', this._id);
   }
 });
+Template.registerHelper('equals', function (a, b) {
+  return a === b;
+});
