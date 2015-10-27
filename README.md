@@ -1,7 +1,7 @@
 # Greensquare
 
 Greenspace discovery for humans. See demo at
-[greensquare.lgessler.com](http://greensquare.lgessler.com), and presentation
+[greensquare.lgessler.com](http://greensquare.meteor.com), and presentation
 slides at `doc/ppt.pdf`. 
 
 Developed for [Hack to Help Hampton
