@@ -67,7 +67,7 @@ Router.route('/', {
   onAfterAction: function() {
     setTimeout( function() {
       Router.go('nearSpaces');
-    }, 5000);
+    }, 5000000);
   }
 });
 
